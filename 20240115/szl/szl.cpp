@@ -4,28 +4,43 @@
 #include <iostream>
 #include <iostream>
 
-int main()
+
+bool palidrome(std::string palidrome)
 {
-    std::cout << "Type a word to check if it's a true palidrome (aka, spaces do count)" << std::endl;
-    std::string palidrome;
-    std::cin >> palidrome;
-    int start = 0, end = palidrome.size()-1;
+
+    int start = 0, end = palidrome.size() - 1;
     bool flag = false;
     while (start < end)
     {
-        if (palidrome[start] != palidrome[end] && start != end )
+        if (palidrome[start] != palidrome[end] && start != end)
         {
-            std::cout << "not palidrome" << std::endl;
-            flag = true;
-            break;
+            return false;
         }
         start++; end--;
     }
-   
-    if(!flag)
-        std::cout << "was a PALIdrome" << std::endl;
-    
+    return true;
 
+}
+
+#define IS_TRUE(x) { if (!(x)) std::cout << __FUNCTION__ << " failed on line " << __LINE__ << std::endl; }
+
+void test_palidrome()
+{
+
+    IS_TRUE(palidrome("aabbaa"));
+    IS_TRUE(!palidrome("bbaacc"));
+    IS_TRUE(palidrome("aba"));
+}
+
+
+
+int main()
+{
+    std::cout << "Type a word to check if it's a true palidrome (aka, spaces do count)" << std::endl;
+   
+ //   std::cout << palidrome("aabbaa") << std::endl;
+
+    test_palidrome();
 
     return 0;
 }
