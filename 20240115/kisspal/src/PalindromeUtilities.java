@@ -18,8 +18,6 @@ public class PalindromeUtilities {
             else {
                     char beginChar = inputValue.charAt(idx);
                     char endChar = inputValue.charAt(inputValue.length() - idx -1);
-
-                    System.out.println("A: " + beginChar + " B: " + endChar);
                     
                     if (beginChar == endChar) {
                             return checkPalindrome(idx + 1, inputValue);
