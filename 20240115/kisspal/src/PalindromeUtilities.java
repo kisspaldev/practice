@@ -2,12 +2,16 @@
 public class PalindromeUtilities {
 
     public boolean isPalindrome(String inputValue) {
-    	if (inputValue == null ||
-    		inputValue.length() == 1) {
+    	if (inputValue == null) {
     		return false;
     	}
     	else {
-    		return checkPalindrome(0, inputValue);
+    		if (inputValue.length() == 1) {
+    			return true;
+    		}
+    		else {
+    			return checkPalindrome(0, inputValue);	
+    		}    		
     	}    	            
     }
 
