@@ -1,18 +1,21 @@
-// szl.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// szl.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #pragma once
 #include <iostream>
 #include <string>
 #include <unordered_map>
-#include <map>
 
 
 
-std::map<char, int> counter(std::string s)
+
+
+
+//the sane solution for ASCII characters (but not special characters
+std::unordered_map<char, int> counter(const std::string s)
 {
 
-    std::map<char, int> retval;
+    std::unordered_map<char, int> retval;
 
     if ( s.size() == NULL)
     {
@@ -22,12 +25,12 @@ std::map<char, int> counter(std::string s)
 
  
 
-    for (auto &i : s)
+    for (const auto &i : s)
     {
         retval[i] += 1;
     }
 
-    for (auto i : retval)
+    for (auto &i : retval)
     {
        // std::cout << i.second << " _" << i.first << std::endl;
         std::cout << "the character: " <<  i.first << " have been found " << i.second << " times." << std::endl;
@@ -43,6 +46,6 @@ int main()
 
     counter("aaaaabbbdd1");
 
-    
+   
 }
 
