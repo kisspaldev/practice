@@ -5,7 +5,6 @@ public class App {
 	    public static void main(String[] args) throws Exception {
 	        System.out.println("Second Max");
 	        System.out.println("");
-	        long input =25;
 	        System.out.println(second_max(new int[]{ 9,10,1,2,3,4,5,6,7,8 })); //9
 	        
 	        System.out.println(second_max(new int[]{ 10,9,1,2,3,4,5,6,7,8 })); //9
