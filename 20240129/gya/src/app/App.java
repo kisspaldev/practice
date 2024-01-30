@@ -26,6 +26,7 @@ public class App {
 	        input =10;
 	        System.out.println("digit_sum("+input+")= "+digit_sum(input)); //1
 	        
+	        
 	        input =-1234;
 	        System.out.println("digit_sum("+input+")= "+digit_sum(input)); //0
 
