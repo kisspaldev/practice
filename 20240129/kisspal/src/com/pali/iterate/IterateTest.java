@@ -6,7 +6,7 @@ public class IterateTest {
 		Process process = new Process();
 		
 		try {
-			process.check(74);
+			process.check(4897);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
