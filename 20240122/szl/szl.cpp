@@ -12,8 +12,9 @@
 
 
 //the sane solution for ASCII characters (but not special characters
-std::unordered_map<char, int> counter(const std::string s)
+std::unordered_map<char, int> counter(const std::string &s)
 {
+   
 
     std::unordered_map<char, int> retval;
 
@@ -30,9 +31,8 @@ std::unordered_map<char, int> counter(const std::string s)
         retval[i] += 1;
     }
 
-    for (auto &i : retval)
+    for (auto const &i : retval)
     {
-       // std::cout << i.second << " _" << i.first << std::endl;
         std::cout << "the character: " <<  i.first << " have been found " << i.second << " times." << std::endl;
     }
 
@@ -44,7 +44,7 @@ std::unordered_map<char, int> counter(const std::string s)
 int main()
 {
 
-    counter("aaaaabbbdd1");
+    counter("aaaaabbbdd1sdasdasdasdasd");
 
    
 }
