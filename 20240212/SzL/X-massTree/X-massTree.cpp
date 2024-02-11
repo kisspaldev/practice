@@ -29,13 +29,14 @@ void nTree(int size)
     std::string line;
     while (!construcitonComplete)
     {
+        //dealing with the branhes and leaves
         if(!branchComplete)
         {
      
             if (logic)
             {
 
-            
+                    //how many spaces to offset the treeleaves with
                  spacesToPrint = size- currheight;
              
                 //cleanup
@@ -45,7 +46,7 @@ void nTree(int size)
                  print = false;
             }
 
-
+            //queuing spaces to print
             if (SpaceIt)
             {
             
@@ -59,7 +60,7 @@ void nTree(int size)
                     spacesToPrint--;
                 }
             }
-
+            //calculating and queueing the leaves to print
             if (characterIt)
             {
                 line += "X";
@@ -72,7 +73,7 @@ void nTree(int size)
                     characterIt = false;
                 }
             }
-
+            //actually printing
             if (print)
             {
                 std::cout << line << std::endl;
@@ -81,7 +82,7 @@ void nTree(int size)
                 print = false;
                 logic = true;
                 charsToPrint = currheight*2+1;
-            }
+            }//checking if we're done
             if (currheight == size)
             {
                 branchComplete = true;
@@ -94,6 +95,7 @@ void nTree(int size)
         }
         else
         {
+            //dealing with the trunk
             if (logic)
             {
                 spacesToPrint = size - trunkThickness / 2;
@@ -101,6 +103,7 @@ void nTree(int size)
                 logic = false;
                 
             }
+            //queueing the spaces to pring
             if (SpaceIt)
             {
                 line += " ";
@@ -111,13 +114,15 @@ void nTree(int size)
                     SpaceIt = false;
                 }
             }
+            //queueing the trunk to print
             if (characterIt)
             {
                 line += "X";
                 --trunkCC;
-
+                
                 if (trunkCC == 0)
                 {
+                    //actually printing
                     std::cout << line << std::endl;
                     line = "";
                     trunkCC = trunkThickness;
